@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plushie Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="./assets/js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="hotline">
+                <i class="fas fa-phone"></i>
+                Hotline: 0866 777 320
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="logo">
+                <h1>Plushie Store</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">About me</a>
+                        <ul class="dropdown-menu">
+                            <li>Tên:Nguyễn Hải Đăng</li>
+                            <li>MSSV:DH52200438</li>
+                            <li>Lớp:D22_TH14</li>
+                            <li>Nhóm 33 Thứ 5 Ca 3</li>
+                        </ul>
+                    </li>
+                    <li><a href="lab.html">Lab thực hành</a></li>
+                    <li class="cart" onclick="window.location.href='cart.html'">
+                        <div class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-badge" id="cart-count">0</span>
+                        </div>
+                        <span class="cart-text">Giỏ hàng</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <aside>
+            <div class="filter-section">
+                <h2><i class="fas fa-filter"></i> Bộ lọc tìm kiếm</h2>
+                <div class="price-filter">
+                    <h3>Khoảng giá</h3>
+                    <div class="price-options">
+                        <div class="price-option">
+                            <input type="checkbox" id="price1" name="price-filter" value="300000-500000" onclick="filterProducts()">
+                            <label for="price1">
+                                <span class="checkmark"></span>
+                                300.000₫ - 500.000₫
+                            </label>
+                        </div>
+                        <div class="price-option">
+                            <input type="checkbox" id="price2" name="price-filter" value="500000-1000000" onclick="filterProducts()">
+                            <label for="price2">
+                                <span class="checkmark"></span>
+                                500.000₫ - 1.000.000₫
+                            </label>
+                        </div>
+                        <div class="price-option">
+                            <input type="checkbox" id="price3" name="price-filter" value="1000000+" onclick="filterProducts()">
+                            <label for="price3">
+                                <span class="checkmark"></span>
+                                Trên 1.000.000₫
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <section class="products">
+            <div class="sort-options">
+                <span>Xếp theo:</span>
+                <select onchange="sortProducts(this.value)">
+                    <option value="">Mặc định</option>
+                    <option value="low-to-high">Giá thấp đến cao</option>
+                    <option value="high-to-low">Giá cao xuống thấp</option>
+                </select>
+            </div>
+            <div class="product-list">
+                <div class="product" data-price="550000">
+                    <div class="product-image">
+                        <img src="./assets/images/h1.jpg" alt="Plushie 1" class="main-image">
+                        <img src="./assets/images/h1-2.jpg" alt="Plushie 1 Hover" class="hover-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tomori Takamatsu Big 40cm Plushie</h3>
+                        <p class="price">550,000₫</p>
+                        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product" data-price="1500000">
+                    <div class="product-image">
+                        <img src="./assets/images/h2.jpg" alt="Plushie 2" class="main-image">
+                        <img src="./assets/images/h2-2.jpg" alt="Plushie 2 Hover" class="hover-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Hatsune Miku Last Lucky Prize Lucky Kuji</h3>
+                        <p class="price">1,500,000₫</p>
+                        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product" data-price="1450000">
+                    <div class="product-image">
+                        <img src="./assets/images/h3.jpg" alt="Plushie 3" class="main-image">
+                        <img src="./assets/images/h3-2.jpg" alt="Plushie 3 Hover" class="hover-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Frieren Silly Face - Frieren Beyond Journey's End</h3>
+                        <p class="price">1,450,000₫</p>
+                        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product" data-price="1200000">
+                    <div class="product-image">
+                        <img src="./assets/images/h4.jpg" alt="Plushie 4" class="main-image">
+                        <img src="./assets/images/h4-2.jpg" alt="Plushie 4 Hover" class="hover-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Anon Chihaya Big 40cm Plushie</h3>
+                        <p class="price">1,200,000₫</p>
+                        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product" data-price="400000">
+                    <div class="product-image">
+                        <img src="./assets/images/h5.jpg" alt="Plushie 5" class="main-image">
+                        <img src="./assets/images/h5-2.jpg" alt="Plushie 5 Hover" class="hover-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Plushie Fern - Sousou no Frieren</h3>
+                        <p class="price">400,000₫</p>
+                        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product" data-price="1050000">
+                    <div class="product-image">
+                        <img src="./assets/images/h6.jpg" alt="Plushie 6" class="main-image">
+                        <img src="./assets/images/h6-2.jpg" alt="Plushie 6 Hover" class="hover-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Kigurumi Plushie Noko Shikanoko</h3>
+                        <p class="price">1,050,000₫</p>
+                        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product" data-price="1050000">
+                    <div class="product-image">
+                        <img src="./assets/images/h7.jpg" alt="Plushie 7" class="main-image">
+                        <img src="./assets/images/h7-2.jpg" alt="Plushie 7 Hover" class="hover-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Kigurumi Plushie Torako Koshi</h3>
+                        <p class="price">1,050,000₫</p>
+                        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product" data-price="1500000">
+                    <div class="product-image">
+                        <img src="./assets/images/h8.jpg" alt="Plushie 8" class="main-image">
+                        <img src="./assets/images/h8.jpg" alt="Plushie 8 Hover" class="hover-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Touhou Plush Series 42 [Cirno (ver.1.5)] FumoFumo Cirno </h3>
+                        <p class="price">1,500,000₫</p>
+                        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product" data-price="1450000">
+                    <div class="product-image">
+                        <img src="./assets/images/h9.jpg" alt="Plushie 9" class="main-image">
+                        <img src="./assets/images/h9.jpg" alt="Plushie 9 Hover" class="hover-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Plush Hitori Gotoh Fumofumo Hitori</h3>
+                        <p class="price">1,450,000₫</p>
+                        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product" data-price="1450000">
+                    <div class="product-image">
+                        <img src="./assets/images/h10.jpg" alt="Plushie 10" class="main-image">
+                        <img src="./assets/images/h10.jpg" alt="Plushie 10 Hover" class="hover-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Plush Ikuyo Kita Fumofumo Ikuyo</h3>
+                        <p class="price">1,450,000₫</p>
+                        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product" data-price="1450000">
+                    <div class="product-image">
+                        <img src="./assets/images/h11.jpg" alt="Plushie 11" class="main-image">
+                        <img src="./assets/images/h11.jpg" alt="Plushie 11 Hover" class="hover-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Plush Ryo Yamada Fumofumo Ryo</h3>
+                        <p class="price">1,450,000₫</p>
+                        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product" data-price="1450000">
+                    <div class="product-image">
+                        <img src="./assets/images/h12.jpg" alt="Plushie 12" class="main-image">
+                        <img src="./assets/images/h12.jpg" alt="Plushie 12 Hover" class="hover-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Plush Nijika Ijichi Fumofumo Nijika</h3>
+                        <p class="price">1,450,000₫</p>
+                        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <hr />
+        <div class="footer-copyright">
+            Họ và tên: Nguyễn Hải Đăng | MSSV: DH52200438| Lớp: D22_TH14 |
+            Nhóm 33 Thứ 5 Ca 3
+        </div>
+    </footer>
+</body>
+</html>
